@@ -7,4 +7,4 @@ before_install:
 - chmod 600 barta3.pem
 #- echo -e "Host amazonaws.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 #- ssh -i barta3.pem -o "StrictHostKeyChecking no" ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com
-- scp -i barta3.pem -o "StrictHostKeyChecking no" ch.bfh.bti7515.waschfritz.rest/target/ch.bfh.bti7515.waschfritz.rest-1.1.9.RELEASE.jar ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com
+- scp -i barta3.pem -o "StrictHostKeyChecking no" ch.bfh.bti7515.waschfritz.rest/target/ch.bfh.bti7515.waschfritz.rest-1.1.9.RELEASE.jar ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com:/home/ubuntu/deployment
