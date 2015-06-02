@@ -4,6 +4,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_3fd0ad2add15_key -iv $encrypted_3fd0ad2add15_iv
   -in barta3.pem.enc -out barta3.pem -d
   
+ - chmod 600 barta3.pem
 #- echo -e "Host amazonaws.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh -i barta3.pem -o "StrictHostKeyChecking no" ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com
 #- scp -i barta3.pem target/ ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com
