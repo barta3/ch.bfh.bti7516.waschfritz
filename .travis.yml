@@ -1,4 +1,4 @@
 language: java
 before_install:
 - openssl aes-256-cbc -K $encrypted_3fd0ad2add15_key -iv $encrypted_3fd0ad2add15_iv
-  -in barta3.pem.enc -out ~\/.ssh/barta3.pem -d
+  -in barta3.pem.enc -out ~/.ssh/barta3.pem -d
