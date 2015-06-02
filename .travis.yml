@@ -12,16 +12,16 @@ after_success:
 #- ssh -i barta3.pem -o "StrictHostKeyChecking no" ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com
 
 # stop old app
-- ssh -i barta3.pem -o "StrictHostKeyChecking no" ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com
-  -pkill -f 'java -jar'
+- ssh -i barta3.pem -o "StrictHostKeyChecking no" ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com 
+  pkill -f 'java -jar'
 
 # remove old jar
-- ssh -i barta3.pem -o "StrictHostKeyChecking no" ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com
-  - rm -f /home/ubuntu/deployment/ch.bfh.bti7515.waschfritz.rest-1.1.9.RELEASE.jar
+- ssh -i barta3.pem -o "StrictHostKeyChecking no" ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com 
+  rm -f /home/ubuntu/deployment/ch.bfh.bti7515.waschfritz.rest-1.1.9.RELEASE.jar
 
 # copy jar to server
 - scp -i barta3.pem -o "StrictHostKeyChecking no" ch.bfh.bti7515.waschfritz.rest/target/ch.bfh.bti7515.waschfritz.rest-1.1.9.RELEASE.jar ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com:/home/ubuntu/deployment
 
 # start jar
 - ssh -i barta3.pem -o "StrictHostKeyChecking no" ubuntu@ec2-52-28-32-122.eu-central-1.compute.amazonaws.com
-  -java -jar /home/ubuntu/deployment/ch.bfh.bti7515.waschfritz.rest-1.1.9.RELEASE.jar
+  java -jar /home/ubuntu/deployment/ch.bfh.bti7515.waschfritz.rest-1.1.9.RELEASE.jar
